@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('logout', [LoginController::class, 'logout']);
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth', 'ceklevel:admin'])->group(function(){
+    Route::get('/booking', [BookingController::class, 'index']);
+});
+Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/', [HomeController::class, 'index']);
 });
