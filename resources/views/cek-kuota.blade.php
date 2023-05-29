@@ -40,6 +40,28 @@
         margin-left: 100px;
         margin-right: 100px;
       }
+
+      table {
+        max-width: 100%;
+        width: 1150px;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin-left: 100px;
+
+    }
+
+    table thead th {
+        background-color: #1E6115;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
     </style>
 </head>
 
@@ -76,27 +98,48 @@
 
     </div>
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
-    <form method="POST" action="{{ route('booking.store') }}">
-      @csrf
-      <div class="mb-3">
-        <label for="nama" class="form-label">Nama Ketua Kelompok:</label>
-        <input type="text" class="form-control" id="nama" name="nama" required>
-      </div>
-      <div class="mb-3">
-        <label for="tanggal_berangkat" class="form-label">Tanggal Berangkat:</label>
-        <input type="date" class="form-control" id="tanggal_berangkat" name="tanggal_berangkat" required>
-      </div>
-      <div class="mb-3">
-        <label for="tanggal_pulang" class="form-label">Tanggal Pulang:</label>
-        <input type="date" class="form-control" id="tanggal_pulang" name="tanggal_pulang" required>
-      </div>
-      <div class="mb-3">
-        <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki:</label>
-        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="1" required>
-        <p>Ket: Jumlah pendaki termasuk dengan ketua kelompok.</p>
-      </div>
-      <button type="submit" class="btn btn-primary">Booking</button>
-    </form>
+
+    <form action="{{ route('cek-kuota') }}" method="GET">
+    <div class="mb-3">
+        <label for="start_date" class="form-label">Tanggal Berangkat:</label>
+        <input class="form-control" type="date" name="start_date" id="start_date" required>
+    </div>
+    <div class="mb-3">
+        <label for="end_date" class="form-label">Tanggal Pulang:</label>
+        <input class="form-control" type="date" name="end_date" id="end_date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Cek Kuota</button>
+</form>
+
+<br>
+@if (isset($kuotas))
+    <h2 class="kuotapendakian">Kuota Pendakian:</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Kuota Tersedia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($kuotas as $kuota)
+                <tr>
+                    <td>{{ $kuota->tanggal->format('Y-m-d') }}</td>
+                    <td>{{ $kuota->kuota }} kuota tersedia</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    
+
+    {{-- <ul>
+        @foreach ($kuotas as $kuota)
+            <li>{{ $kuota->tanggal->format('Y-m-d') }}: {{ $kuota->kuota }} kuota tersedia</li>
+        @endforeach
+    </ul> --}}
+@endif
   </section>
 
   <!-- ======= Footer ======= -->
