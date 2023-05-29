@@ -43,9 +43,7 @@
   @include('layouts.navbar')
   <!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
   @include('layouts.herosection')
-  <!-- End Hero -->
 
     <!-- Main -->
   @yield('content')

@@ -1,4 +1,6 @@
+@extends('layouts.template')
 
+@section('content')
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us section-bg">
         <div class="container-fluid" data-aos="fade-up">
@@ -8,41 +10,63 @@
             <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
   
               <div class="content">
-                <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                <h3>INFORMATION</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                  The Mount Butak-Panderman area is a tourist area located in the Gunung Banyak area, Batu Tourism City, East Java. There are several interesting tourist objects that can be found in this area, such as Coban Rais and Coban Talun waterfalls. Climbing to the top of Mount Butak and Panderman is a popular activity among mountain climbers.
+                </p>
+
+                <p>
+                  Following are some of the facilities and infrastructure within the Mount Butak-Panderman area, including:
                 </p>
               </div>
   
               <div class="accordion-list">
                 <ul>
                   <li>
-                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Hiking Trails <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                       <p>
-                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                        The Mount Butak-Panderman hiking trail offers challenging ascents and beautiful views through lush forests, rocky terrain and moderately sloping ground, and stunning panoramas.
                       </p>
                     </div>
                   </li>
   
                   <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Guard Post <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                       <p>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                        There are posts along the hiking trail, such as huts, rest areas, and even toilets
                       </p>
                     </div>
                   </li>
   
                   <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Parking Facility <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                       <p>
-                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                        Adequate parking facilities for visitors who bring private vehicles, both motorbikes and cars
                       </p>
                     </div>
                   </li>
-  
+                  
+                  <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span> Place to stay <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
+                      <p>
+                        There are many lodging places available such as villas and resorts which provide beautiful views for tourists who want to spend longer time in this area
+                      </p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>05</span> Outdoor Activity <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
+                      <p>
+                        In addition to the above facilities, the Mount Butak-Panderman area also provides many types of outdoor activities such as climbing, camping, and paragliding.
+                      </p>
+                    </div>
+                  </li>
+
                 </ul>
               </div>
   
@@ -53,4 +77,4 @@
   
         </div>
       </section><!-- End Why Us Section -->
-  
+@endsection
