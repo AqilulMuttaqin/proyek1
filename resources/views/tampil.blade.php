@@ -35,6 +35,15 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <style>
+      .card {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      h2 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+      }
+    </style>
 </head>
 
 <body>
@@ -43,11 +52,52 @@
   @include('layouts.navbar')
   <!-- End Header -->
 
-  @include('layouts.herosection')
+  <section id="hero1" class="d-flex align-items-center">
 
-    <!-- Main -->
-  @yield('content')
-  <!-- End #main -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>HALAMAN</h1>
+          <h1>ADMIN</h1>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            {{-- <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
+            {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          {{-- <img src="assets/img/hero-img.png" class="img-fluid animated" alt=""> --}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="skills" class="skills">
+    <div class="card">
+        <div class="card-header">
+            <h2>List Transaksi</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </section>
 
   <!-- ======= Footer ======= -->
   @include('layouts.footer')
