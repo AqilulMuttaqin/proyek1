@@ -55,7 +55,7 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>HALAMAN</h1>
-          <h1>BOOKING</h1>
+          <h1>PEMBAYARAN</h1>
           <div class="d-flex justify-content-center justify-content-lg-start">
             {{-- <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
             {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
@@ -73,43 +73,33 @@
   <!-- ======= Skills Section ======= -->
   <section id="skills" class="skills">
     <div class="form-container">
-
+        <h2>Detail Booking</h2>
     </div>
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
     <form method="POST" action="{{ route('booking.store') }}">
       @csrf
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Ketua Kelompok:</label>
-        <input type="text" class="form-control" id="nama" name="nama" required>
+        <input type="text" class="form-control" id="nama" name="nama" value="{{ $booking->nama }}" required>
       </div>
       <div class="mb-3">
         <label for="tanggal_berangkat" class="form-label">Tanggal Berangkat:</label>
-        <input type="date" class="form-control" id="tanggal_berangkat" name="tanggal_berangkat" required>
+        <input type="date" class="form-control" id="tanggal_berangkat" name="tanggal_berangkat" value="{{ $booking->tanggal_berangkat }}" required>
       </div>
       <div class="mb-3">
         <label for="tanggal_pulang" class="form-label">Tanggal Pulang:</label>
-        <input type="date" class="form-control" id="tanggal_pulang" name="tanggal_pulang" required>
+        <input type="date" class="form-control" id="tanggal_pulang" name="tanggal_pulang" value="{{ $booking->tanggal_pulang }}" required>
       </div>
       <div class="mb-3">
         <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki:</label>
-        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="" required>
-        <p>Ket: Jumlah pendaki termasuk dengan ketua kelompok.</p>
+        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="{{ $booking->jumlah_pendaki }}" required>
       </div>
-      <button type="submit" class="btn btn-primary" onclick="calculateTotal()">Booking</button>
-
-      <script>
-          function calculateTotal() {
-              // Lakukan perhitungan total pembayaran sesuai dengan kebutuhan
-              var jumlahPendaki = parseInt(document.getElementById('jumlah_pendaki').value);
-              var totalAmount = jumlahPendaki * 100; // Misalnya, setiap pendaki dikenakan biaya 100
-  
-              // Setel nilai total_amount pada input tersembunyi
-              document.getElementById('total_amount').value = totalAmount;
-          }
-      </script>
+      <div class="mb-3">
+        <label for="jumlah_pendaki" class="form-label">Total Amount</label>
+        <input type="number" name="total_amount" class="form-control" id="total_amount" value="{{ $booking->total_amount}}" required>
+      </div>
     </form>
   </section>
-
   <!-- ======= Footer ======= -->
   @include('layouts.footer')
   <!-- End Footer -->
@@ -132,3 +122,33 @@
 </body>
 
 </html>
+
+{{-- </html>
+<!-- payment.blade.php -->
+
+<h1>Halaman Pembayaran</h1>
+
+<h2>Detail Booking</h2>
+<p>Nama Ketua Kelompok: {{ $booking->nama }}</p>
+<p>Tanggal Berangkat: {{ $booking->tanggal_berangkat }}</p>
+<p>Tanggal Pulang: {{ $booking->tanggal_pulang }}</p>
+<p>Jumlah Pendaki: {{ $booking->jumlah_pendaki }}</p>
+<p>Total Amount: {{ $booking->total_amount }}</p>
+
+<hr>
+
+<h2>Formulir Pembayaran</h2>
+<form method="POST" action="{{ route('booking.processPayment', $booking->id) }}">
+    @csrf
+    <!-- Tambahkan input lainnya sesuai kebutuhan -->
+    <div class="mb-3">
+        <label for="payment_method">Pembayaran kirim ke rekening yang tertera di bawah</label><br>
+        <label for="payment_method">BRI: 626163646506</label><br>
+        <label for="payment_method">BNI: 717273747507</label>   
+    </div>
+    <div class="mb-3">
+        <label>Bukti Pembayaran</label>
+        <input type="file" name="bukti_pembayaran">
+    </div>
+    <button type="submit" class="btn btn-primary">Bayar</button>
+</form> --}}

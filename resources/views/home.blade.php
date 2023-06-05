@@ -102,7 +102,7 @@
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/Aqil.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/profil.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Muhammad Aqilul Muttaqin</h4>
                 <span>Project Manager</span>
@@ -119,7 +119,7 @@
 
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/Afif.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/profil.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Afif Lukmanul Hakim</h4>
                 <span>Team Lead</span>
@@ -128,7 +128,6 @@
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href="https://www.instagram.com/afiflh_/"><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -136,7 +135,7 @@
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/Billie.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/profil.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Billie Faiqul Izzat</h4>
                 <span>Communicate Specialist</span>
@@ -145,7 +144,6 @@
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>

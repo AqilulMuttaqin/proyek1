@@ -7,6 +7,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\KuotaController;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +32,8 @@ Route::middleware(['auth', 'ceklevel:user'])->group(function(){
     Route::get('/booking', [BookingController::class, 'index']);
     Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+    Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
+    Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
 });
 Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/', [HomeController::class, 'index']);

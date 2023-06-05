@@ -40,9 +40,6 @@
         margin-left: 100px;
         margin-right: 100px;
       }
-      h2 {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-      }
     </style>
 </head>
 
@@ -77,22 +74,30 @@
             <h2>List Transaksi</h2>
         </div>
         <div class="card-body">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Tanggal Berangkat</th>
+                    <th scope="col">Tanggal Pulang</th>
+                    <th scope="col">Jumlah Pendaki</th>
+                    <th scope="col">Status Konfirmasi</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @php
+                  $no = 1;
+                  @endphp
+                  @foreach ($bkg as $b)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td class="text-center">{{ $no++ }}</td>
+                    <td>{{ $b->nama }}</td>
+                    <td>{{ $b->tanggal_berangkat }}</td>
+                    <td>{{ $b->tanggal_pulang }}</td>
+                    <td>{{ $b->jumlah_pendaki }}</td>
                   </tr>
+                  @endforeach
                 </tbody>
             </table>
         </div>
