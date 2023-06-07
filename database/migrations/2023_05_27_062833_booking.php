@@ -19,6 +19,12 @@ return new class extends Migration
             $table->date('tanggal_berangkat');
             $table->date('tanggal_pulang');
             $table->integer('jumlah_pendaki');
+            $table->integer('nominal');
+            $table->string('bukti_pembayaran')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('status')->nullable();
+            $table->string('kode_unik', 12)->nullable();
             $table->timestamps();
         });
 

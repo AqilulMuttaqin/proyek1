@@ -81,18 +81,24 @@
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jumlah Pendaki</th>
+                    <th scope="col">Nominal</th>
+                    <th scope="col">Bukti Pembayaran</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($history as $i => $h)
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{++$i}}</th>
+                    <td>{{$h->nama}}</td>
+                    <td>{{$h->jumlah_pendaki}}</td>
+                    <td>{{$h->nominal}}</td>
+                    <td><a href="" class="btn btn-primary">Lihat Bukti</a></td>
                     <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
                   </tr>
+                  @endforeach
                 </tbody>
             </table>
         </div>

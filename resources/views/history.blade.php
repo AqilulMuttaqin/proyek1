@@ -35,12 +35,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <style>
-      form {
-        margin-left: 100px;
-        margin-right: 100px;
-      }
-    </style>
 </head>
 
 <body>
@@ -54,8 +48,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>HALAMAN</h1>
-          <h1>BOOKING</h1>
+          <h1>HISTORY</h1>
+          <h1>PEMESANAN</h1>
           <div class="d-flex justify-content-center justify-content-lg-start">
             {{-- <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
             {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
@@ -68,46 +62,32 @@
     </div>
 
   </section>
-
-    <!-- Main -->
-  <!-- ======= Skills Section ======= -->
-  <section id="skills" class="skills">
-    <div class="form-container">
-
-    </div>
-    <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
-    <form method="POST" action="{{ route('booking.store') }}">
-      @csrf
-      <div class="mb-3">
-        <label for="nama" class="form-label">Nama Ketua Kelompok:</label>
-        <input type="text" class="form-control" id="nama" name="nama" required value="{{ old('nama')}}">
-      </div>
-      <div class="mb-3">
-        <label for="tanggal_berangkat" class="form-label">Tanggal Berangkat:</label>
-        <input type="date" class="form-control" id="tanggal_berangkat" name="tanggal_berangkat" required value="{{ old('tanggal_berangkat')}}">
-      </div>
-      <div class="mb-3">
-        <label for="tanggal_pulang" class="form-label">Tanggal Pulang:</label>
-        <input type="date" class="form-control" id="tanggal_pulang" name="tanggal_pulang" required value="{{ old('tanggal_pulang')}}">
-      </div>
-      <div class="mb-3">
-        <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki:</label>
-        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="1" required value="{{ old('jumlah_pendaki')}}">
-        <p>Ket: Jumlah pendaki termasuk dengan ketua kelompok.</p>
-      </div>
-      <button type="submit" class="btn btn-primary" onclick="calculateTotal()">Booking</button>
-
-      <script>
-          function calculateTotal() {
-              // Lakukan perhitungan total pembayaran sesuai dengan kebutuhan
-              var jumlahPendaki = parseInt(document.getElementById('jumlah_pendaki').value);
-              var totalAmount = jumlahPendaki * 100; // Misalnya, setiap pendaki dikenakan biaya 100
-  
-              // Setel nilai total_amount pada input tersembunyi
-              document.getElementById('total_amount').value = totalAmount;
-          }
-      </script>
-    </form>
+  <section id="skills" class="skills container">
+   
+        <div class="row">
+            @foreach($history as $h)
+            <div class="col-md-3">
+                
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        @if($h->status == 'pending')
+                      <div class="bg-warning p-1 rounded text-center text-white"><span>Pending</span></div>
+                      @elseif($h->status == 'success')
+                      <div class="bg-success p-1 rounded text-center text-white"><span>Success</span></div>
+                      @else
+                      <div class="bg-danger p-1 rounded text-center text-white"><span>Failed</span></div>
+                      @endif
+                        <span class="small text-gray">{{$h->tanggal_berangkat . ' - ' . $h->tanggal_pulang}}</span>
+                      <h3 class="card-title">{{$h->nama}}</h3>
+                      
+                      <p class="card-text">Jumlah Pendaki: {{$h->jumlah_pendaki}} Orang <br> Dengan Nominal: Rp. {{$h->nominal}}</p>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                  </div>
+                  
+            </div>
+            @endforeach
+        </div>
   </section>
 
   <!-- ======= Footer ======= -->
@@ -128,14 +108,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    let error = document.querySelector('#error').value;
-    if(error != 'bukan'){
-      alert(error);
-    } else {
-      console.log('tes')
-    }
-  </script>
+
 </body>
 
 </html>

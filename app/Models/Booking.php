@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nama',
-        'tanggal_berangkat',
-        'tanggal_pulang',
-        'jumlah_pendaki'
-    ];
+    protected $guarded = ['id'];
+
+    public function user(){
+        $this->belongsTo(User::class);
+    }
 }
