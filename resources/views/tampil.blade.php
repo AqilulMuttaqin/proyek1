@@ -40,9 +40,6 @@
         margin-left: 100px;
         margin-right: 100px;
       }
-      h2 {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-      }
     </style>
 </head>
 
@@ -77,11 +74,12 @@
             <h2>List Transaksi</h2>
         </div>
         <div class="card-body">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
+<<<<<<< HEAD
                     <th scope="col">Jumlah Pendaki</th>
                     <th scope="col">Nominal</th>
                     <th scope="col">Bukti Pembayaran</th>
@@ -97,6 +95,25 @@
                     <td>{{$h->nominal}}</td>
                     <td><a href="" class="btn btn-primary">Lihat Bukti</a></td>
                     <td>Mark</td>
+=======
+                    <th scope="col">Tanggal Berangkat</th>
+                    <th scope="col">Tanggal Pulang</th>
+                    <th scope="col">Jumlah Pendaki</th>
+                    <th scope="col">Status Konfirmasi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @php
+                  $no = 1;
+                  @endphp
+                  @foreach ($bkg as $b)
+                  <tr>
+                    <td class="text-center">{{ $no++ }}</td>
+                    <td>{{ $b->nama }}</td>
+                    <td>{{ $b->tanggal_berangkat }}</td>
+                    <td>{{ $b->tanggal_pulang }}</td>
+                    <td>{{ $b->jumlah_pendaki }}</td>
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
                   </tr>
                   @endforeach
                 </tbody>

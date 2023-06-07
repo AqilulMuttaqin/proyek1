@@ -92,7 +92,11 @@
       </div>
       <div class="mb-3">
         <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki:</label>
+<<<<<<< HEAD
         <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="1" required value="{{ old('jumlah_pendaki')}}">
+=======
+        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="" required>
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
         <p>Ket: Jumlah pendaki termasuk dengan ketua kelompok.</p>
       </div>
       <button type="submit" class="btn btn-primary" onclick="calculateTotal()">Booking</button>

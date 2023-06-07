@@ -12,7 +12,7 @@
                   @endif
                 </ul>
               </li>
-              <li><a class="nav-link scrollto" href="">Tentang Kami</a></li>
+              <li><a class="nav-link scrollto" href="{{ url('/about-us') }}">Tentang Kami</a></li>
               @if (auth()->user()->level=="admin")
                 <li><a class="nav-link scrollto" href="{{ url('/admin') }}">Admin</a></li>
               @endif

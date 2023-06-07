@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FlowController;
@@ -34,7 +35,10 @@ Route::middleware(['auth', 'ceklevel:user'])->group(function(){
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
     Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
     Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
+<<<<<<< HEAD
     Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
+=======
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
 });
 Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/', [HomeController::class, 'index']);
@@ -42,4 +46,5 @@ Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/gallery', [GalleryController::class, 'index']);
     Route::get('/flow', [FlowController::class, 'index']);
     Route::get('/cek-kuota', [KuotaController::class, 'cekKuota'])->name('cek-kuota');
+    Route::get('/about-us', [AboutController::class, 'index']);
 });

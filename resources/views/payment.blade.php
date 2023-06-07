@@ -10,13 +10,19 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+<<<<<<< HEAD
   <link href="{{asset('')}}assets/img/favicon.png" rel="icon">
   <link href="{{asset('')}}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+=======
+  <link href="{{ asset('') }}assets/img/favicon.png" rel="icon">
+  <link href="{{ asset('') }}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+<<<<<<< HEAD
   <link href="{{asset('')}}assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="{{asset('')}}assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{asset('')}}assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,6 +33,18 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('')}}assets/css/style.css" rel="stylesheet">
+=======
+  <link href="{{ asset('') }}assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="{{ asset('') }}assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('') }}assets/css/style.css" rel="stylesheet">
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
 
   <!-- =======================================================
   * Template Name: Arsha
@@ -36,7 +54,11 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
     <style>
+<<<<<<< HEAD
       form {
+=======
+      .card {
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
         margin-left: 100px;
         margin-right: 100px;
       }
@@ -71,6 +93,7 @@
 
     <!-- Main -->
   <!-- ======= Skills Section ======= -->
+<<<<<<< HEAD
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
     
 
@@ -93,6 +116,36 @@
     <button type="submit" class="btn btn-primary">Bayar</button>
 </form>
 
+=======
+  <section id="skills" class="skills">
+    <div class="form-container">
+        <h2>Detail Booking</h2>
+    </div>
+    <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
+    <form method="POST" action="{{ route('booking.store') }}">
+      @csrf
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Ketua Kelompok:</label>
+        <input type="text" class="form-control" id="nama" name="nama" value="{{ $booking->nama }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="tanggal_berangkat" class="form-label">Tanggal Berangkat:</label>
+        <input type="date" class="form-control" id="tanggal_berangkat" name="tanggal_berangkat" value="{{ $booking->tanggal_berangkat }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="tanggal_pulang" class="form-label">Tanggal Pulang:</label>
+        <input type="date" class="form-control" id="tanggal_pulang" name="tanggal_pulang" value="{{ $booking->tanggal_pulang }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki:</label>
+        <input type="number" name="jumlah_pendaki" class="form-control" id="jumlah_pendaki" min="1" max="10" value="{{ $booking->jumlah_pendaki }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="jumlah_pendaki" class="form-label">Total Amount</label>
+        <input type="number" name="total_amount" class="form-control" id="total_amount" value="{{ $booking->total_amount}}" required>
+      </div>
+    </form>
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
   </section>
 
   <!-- ======= Footer ======= -->
@@ -103,6 +156,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+<<<<<<< HEAD
   <script src="{{asset('')}}assets/vendor/aos/aos.js"></script>
   <script src="{{asset('')}}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="{{asset('')}}assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -119,3 +173,49 @@
 </html>
 <!-- payment.blade.php -->
 
+=======
+  <script src="{{ asset('') }}assets/vendor/aos/aos.js"></script>
+  <script src="{{ asset('') }}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('') }}assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="{{ asset('') }}assets/vendor/isotope-layouts/isotope.pkgd.min.js"></script>
+  <script src="{{ asset('') }}assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="{{ asset('') }}assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="{{ asset('') }}assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ asset('') }}assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+{{-- </html>
+<!-- payment.blade.php -->
+
+<h1>Halaman Pembayaran</h1>
+
+<h2>Detail Booking</h2>
+<p>Nama Ketua Kelompok: {{ $booking->nama }}</p>
+<p>Tanggal Berangkat: {{ $booking->tanggal_berangkat }}</p>
+<p>Tanggal Pulang: {{ $booking->tanggal_pulang }}</p>
+<p>Jumlah Pendaki: {{ $booking->jumlah_pendaki }}</p>
+<p>Total Amount: {{ $booking->total_amount }}</p>
+
+<hr>
+
+<h2>Formulir Pembayaran</h2>
+<form method="POST" action="{{ route('booking.processPayment', $booking->id) }}">
+    @csrf
+    <!-- Tambahkan input lainnya sesuai kebutuhan -->
+    <div class="mb-3">
+        <label for="payment_method">Pembayaran kirim ke rekening yang tertera di bawah</label><br>
+        <label for="payment_method">BRI: 626163646506</label><br>
+        <label for="payment_method">BNI: 717273747507</label>   
+    </div>
+    <div class="mb-3">
+        <label>Bukti Pembayaran</label>
+        <input type="file" name="bukti_pembayaran">
+    </div>
+    <button type="submit" class="btn btn-primary">Bayar</button>
+</form> --}}
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c

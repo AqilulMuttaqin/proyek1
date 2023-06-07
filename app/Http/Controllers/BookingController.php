@@ -16,9 +16,16 @@ class BookingController extends Controller
 
     public function tampil()
     {
+<<<<<<< HEAD
         $history = Booking::where('user_id', '=', Auth::user()->id)->where('status', '=', 'pending')->get();
         dd($history);
         return view('tampil')->with('history', $history);
+=======
+        $booking = Booking::all();
+        return view('tampil', [
+            'bkg' => $booking
+        ]);
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
     }
 
     public function create(){
@@ -41,12 +48,17 @@ public function processPayment(Request $request, $booking_id)
 
     // Validasi input pembayaran
     $request->validate([
+<<<<<<< HEAD
         'bukti_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+=======
+        'payment_method' => 'required',
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
         // Tambahkan validasi input lainnya sesuai kebutuhan
     ]);
 
     // Proses pembayaran
     // ...
+<<<<<<< HEAD
 
     // Simpan bukti pembayaran ke storage
     $bukti_pembayaran = $request->file('bukti_pembayaran');
@@ -63,6 +75,20 @@ public function processPayment(Request $request, $booking_id)
 }
 
 
+=======
+    // Lakukan logika pemrosesan pembayaran sesuai dengan metode pembayaran yang dipilih
+    // ...
+
+    // Simpan status pembayaran pada booking
+    $booking->payment_status = true;
+    $booking->save();
+
+    return redirect()->route('booking.tampil')->with('success', 'Pembayaran berhasil');
+}
+
+
+
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
     public function store(Request $request){
     $nama = $request->input('nama');
     $tanggal_berangkat = $request->input('tanggal_berangkat');
@@ -75,7 +101,11 @@ public function processPayment(Request $request, $booking_id)
         return redirect('/booking')->with('error', 'Kuota tidak mencukupi');
     }
 
+<<<<<<< HEAD
     $nominal = $jumlah_pendaki * 15000;
+=======
+    $total_amount = $jumlah_pendaki * 15000;
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
 
     // Membuat booking baru
     $booking = new Booking();
@@ -83,8 +113,12 @@ public function processPayment(Request $request, $booking_id)
     $booking->tanggal_berangkat = $tanggal_berangkat;
     $booking->tanggal_pulang = $tanggal_pulang;
     $booking->jumlah_pendaki = $jumlah_pendaki;
+<<<<<<< HEAD
     $booking->nominal = $nominal;
     $booking->user_id = Auth::user()->id;
+=======
+    $booking->total_amount = $total_amount;
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
     $booking->save();
 
     // Mengurangi kuota yang tersedia
@@ -95,6 +129,11 @@ public function processPayment(Request $request, $booking_id)
     }
     return redirect()->route('booking.payment', ['booking_id' => $booking->id])->with('success', 'Booking berhasil');
 
+<<<<<<< HEAD
+=======
+    return redirect()->route('booking.payment', ['booking_id' => $booking->id])->with('success', 'Booking berhasil');
+
+>>>>>>> 2220780c7b6caf36349f9948dbefd8870ada793c
     }
 
     public function getHistory(){
