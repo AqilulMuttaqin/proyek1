@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FlowController;
@@ -41,4 +42,5 @@ Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/gallery', [GalleryController::class, 'index']);
     Route::get('/flow', [FlowController::class, 'index']);
     Route::get('/cek-kuota', [KuotaController::class, 'cekKuota'])->name('cek-kuota');
+    Route::get('/about-us', [AboutController::class, 'index']);
 });
