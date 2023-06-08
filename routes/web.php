@@ -32,17 +32,6 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function(){
     Route::get('/admin', [BookingController::class, 'tampil']);
 });
 Route::middleware(['auth', 'ceklevel:user'])->group(function(){
-<<<<<<< HEAD
-=======
-    Route::get('/booking', [BookingController::class, 'index']);
-    Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
-    Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
-    Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
-    Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
-    Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
-});
-Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
->>>>>>> 5c2ab2ac7e8a271ab39bdf414f49702efc0cf735
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/information', [InformationController::class, 'index']);
     Route::get('/gallery', [GalleryController::class, 'index']);
@@ -55,9 +44,4 @@ Route::middleware(['auth', 'ceklevel:admin,user'])->group(function(){
     Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
     Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
     Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
-});
-Route::middleware(['auth', 'ceklevel:admin'])->group(function(){
-    Route::get('/', [HomeController::class, 'indexAdmin']);
-    Route::get('/home', [HomeController::class, 'indexAdmin']);
-    Route::get('/admin', [BookingController::class, 'tampil']);
 });
