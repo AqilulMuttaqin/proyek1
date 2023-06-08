@@ -7,15 +7,11 @@
               <li class="dropdown"><a href="#"><span>Booking Online</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{ url('/cek-kuota') }}">Check Kuota</a></li>
-                  @if (auth()->user()->level=="user")
-                    <li><a href="{{ url('/booking') }}">Booking</a></li>
-                  @endif
+                  <li><a href="{{ url('/booking') }}">Booking</a></li>
+                  <li><a href="{{ url('/history') }}">History</a></li>
                 </ul>
               </li>
               <li><a class="nav-link scrollto" href="{{ url('/about-us') }}">Tentang Kami</a></li>
-              @if (auth()->user()->level=="admin")
-                <li><a class="nav-link scrollto" href="{{ url('/admin') }}">Admin</a></li>
-              @endif
               @auth
               <li class="dropdown"><a href="#"><span>Halo, {{ auth()->user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -25,6 +21,6 @@
               @endauth
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
   </div>
 </header>

@@ -44,4 +44,8 @@ Route::middleware(['auth', 'ceklevel:user'])->group(function(){
     Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
     Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
     Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 445aa64829775ca32d132929be7244bb101be1b1
