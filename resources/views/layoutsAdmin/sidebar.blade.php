@@ -25,16 +25,24 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{ url('/data_booking') }}" class="nav-link">
+            <a href="{{ url('/admin-dashboard') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Data Booking
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/data_booking') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Data Booking Pending
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ url('/booking_success') }}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-thumbs-up"></i>
               <p>
                 Data Booking Success
               </p>
@@ -42,7 +50,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('/booking_tertolak') }}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-thumbs-down"></i>
               <p>
                 Data Booking Tertolak
               </p>

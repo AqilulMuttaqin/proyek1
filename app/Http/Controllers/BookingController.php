@@ -19,10 +19,6 @@ class BookingController extends Controller
         $history = Booking::where('user_id', '=', Auth::user()->id)->where('status', '=', 'pending')->get();
         dd($history);
         return view('tampil')->with('history', $history);
-        $booking = Booking::all();
-        return view('tampil', [
-            'bkg' => $booking
-        ]);
     }
 
     public function create(){
@@ -106,5 +102,38 @@ public function processPayment(Request $request, $booking_id)
         return view('history', [
             'history' => $history
         ]);
+    }
+
+    public function dataBooking(){
+        $data = Booking::where('status', '=', 'pending')->get();
+        return view('admin.booking', ['data' => $data]);
+    }
+
+    public function terima($id){
+        $data = Booking::find($id);
+        $data->status = 'success';
+        $data->save();
+        return redirect('/data_booking');
+    }
+
+    public function tolak($id){
+        $data = Booking::find($id);
+        $data->status = 'failed';
+        $data->save();
+        return redirect('/data_booking');
+    }
+
+    public function success(){
+        $data = Booking::where('status', '=', 'success')->paginate(12);
+        $total = 0;
+        foreach($data as $d){
+            $total += $d->nominal;
+        }
+        return view('admin.success', ['data' => $data, 'total' => $total]);
+    }
+
+    public function failed(){
+        $data = Booking::where('status', '=', 'failed')->paginate(12);
+        return view('admin.failed', ['data' => $data]);
     }
 }
