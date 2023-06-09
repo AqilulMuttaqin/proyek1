@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Auth;
 //aql alhamdulillah
 Auth::routes();
 Route::get('logout', [LoginController::class, 'logout']);
-<<<<<<< HEAD
 
     Route::get('/admin-dashboard', [HomeController::class, 'indexAdmin'])->name('admin-dashboard');
     Route::get('/admin-dahsboard/admin', [BookingController::class, 'tampil']);
@@ -38,15 +37,6 @@ Route::get('logout', [LoginController::class, 'logout']);
 
 // Route::middleware(['ceklevel:user'])->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('user-dashboard');
-=======
-Route::middleware(['auth', 'ceklevel:admin'])->group(function(){
-    Route::get('/', [HomeController::class, 'indexAdmin']);
-    Route::get('/home', [HomeController::class, 'indexAdmin']);
-    Route::get('/admin', [BookingController::class, 'tampil']);
-});
-Route::middleware(['auth', 'ceklevel:user'])->group(function(){
-    Route::get('/', [HomeController::class, 'index']);
->>>>>>> 9c0b38af1d3aefac0b87fefd7761e67421515ae0
     Route::get('/information', [InformationController::class, 'index']);
     Route::get('/gallery', [GalleryController::class, 'index']);
     Route::get('/flow', [FlowController::class, 'index']);
@@ -58,12 +48,5 @@ Route::middleware(['auth', 'ceklevel:user'])->group(function(){
     Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
     Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
     Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
-<<<<<<< HEAD
 // });
-=======
-<<<<<<< HEAD
-});
-=======
-});
->>>>>>> 445aa64829775ca32d132929be7244bb101be1b1
->>>>>>> 9c0b38af1d3aefac0b87fefd7761e67421515ae0
+

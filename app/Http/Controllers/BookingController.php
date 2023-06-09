@@ -50,7 +50,7 @@ public function processPayment(Request $request, $booking_id)
 
     // Simpan bukti pembayaran ke storage
     $bukti_pembayaran = $request->file('bukti_pembayaran');
-    $path = $bukti_pembayaran->store('public/bukti_pembayaran');
+    $path = $bukti_pembayaran->store('bukti_pembayaran', 'public');
 
     // Simpan path bukti pembayaran dalam database atau variabel lainnya
     $booking->bukti_pembayaran = $path;
