@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CekLevel
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,14 +15,15 @@ class CekLevel
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle($request, Closure $next, $level)
+    public function handle(Request $request, Closure $next)
     {
-       if(Auth::check() && Auth::user()->level === 'admin'){
-        return $next($request);
-       } else {
-        return redirect('/');
-       }
-       return redirect('/');
-
+        if(Auth::check() && Auth::user()->level === 'user'){
+            return $next($request);
+           } else if(Auth::check() && Auth::user()->level === 'admin') {
+            return redirect('/admin-dashboard');
+           } else {
+            return redirect('/');
+           }
+           return redirect('/');
     }
 }

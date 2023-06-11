@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('logout', [LoginController::class, 'logout']);
 
+Route::middleware(['ceklevel:user'])->group(function(){
     Route::get('/admin-dashboard', [HomeController::class, 'indexAdmin'])->name('admin-dashboard');
     Route::get('/admin-dahsboard/admin', [BookingController::class, 'tampil']);
     Route::get('/data_booking', [BookingController::class, 'dataBooking']);
@@ -34,8 +35,9 @@ Route::get('logout', [LoginController::class, 'logout']);
     Route::post('/tolak/{id}', [BookingController::class, 'tolak']);
     Route::get('/booking_success', [BookingController::class, 'success']);
     Route::get('/booking_tertolak', [BookingController::class, 'failed']);
+});
 
-// Route::middleware(['ceklevel:user'])->group(function(){
+Route::middleware(['userlevel:user'])->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('user-dashboard');
     Route::get('/information', [InformationController::class, 'index']);
     Route::get('/gallery', [GalleryController::class, 'index']);
@@ -48,5 +50,5 @@ Route::get('logout', [LoginController::class, 'logout']);
     Route::get('/booking/{booking_id}/payment', [BookingController::class, 'payment'])->name('booking.payment');
     Route::post('/booking/{booking_id}/payment/process', [BookingController::class, 'processPayment'])->name('booking.processPayment');
     Route::get('/history', [BookingController::class,'getHistory'])->name('booking.history');
-// });
+});
 
