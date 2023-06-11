@@ -96,6 +96,10 @@
   <section id="skills" class="skills">
     <div class="form-container">
 
+      <div class="section-title">
+        <h2>Check Kuota</h2>
+      </div>
+
     </div>
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
 

@@ -37,8 +37,17 @@
   ======================================================== -->
     <style>
       form {
-        margin-left: 100px;
+        margin-left: 10px;
         margin-right: 100px;
+      }
+
+      .mb-3 h3 {
+        font-family: Roboto;
+      }
+
+      .mb-3 label {
+        font-family: Open Sans;
+        font-size: 20px;
       }
     </style>
 </head>
@@ -67,16 +76,48 @@
       </div>
     </div>
 
-  </section>
+  </section><br>
 
     <!-- Main -->
   <!-- ======= Skills Section ======= -->
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
+
+    <div class="section-title">
+      <h2>Payment Confirmation</h2>
+    </div>
     
-
-
-<h2>Formulir Pembayaran</h2>
-<form method="POST" action="{{ route('booking.processPayment', $booking->id) }}" enctype="multipart/form-data">
+    <div class="container mt-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="form-container">
+            <form method="POST" action="{{ route('booking.processPayment', $booking->id) }}" enctype="multipart/form-data">
+              <!-- Tambahkan input lainnya sesuai kebutuhan -->
+              @csrf
+              <div class="mb-3">
+                <h3>Payment Instruction</h3>
+                <label for="payment_method">Pembayaran kirim ke rekening yang tertera di bawah</label><br>
+                <label for="payment_method">- BRI: 626163646506</label><br>
+                <label for="payment_method">- BNI: 717273747507</label><br>
+                <label for="bukti_pembayaran">Bukti Pembayaran:</label>
+                <input type="file" name="bukti_pembayaran" id="bukti_pembayaran" accept="image/*" required>
+                <input type="hidden" name="nama" value="{{$booking->nama}}">
+                <input type="hidden" name="tanggal_berangkat" value="{{$booking->tanggal_berangkat}}">
+                <input type="hidden" name="tanggal_pulang" value="{{$booking->tanggal_pulang}}">
+                <input type="hidden" name="jumlah_pendaki" value="{{$booking->jumlah_pendaki}}">
+              </div>
+              <button type="submit" class="btn btn-success">Bayar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <br>
+    
+  
+  
+    {{-- <div class="form-container">
+    <h2 class="form-pembayaran">Konfirmasi Pembayaran</h2>
+    <form method="POST" action="{{ route('booking.processPayment', $booking->id) }}" enctype="multipart/form-data">
     <!-- Tambahkan input lainnya sesuai kebutuhan -->
     @csrf
     <div class="mb-3">
@@ -90,8 +131,9 @@
         <input type="hidden" name="tanggal_pulang" value="{{$booking->tanggal_pulang}}">
         <input type="hidden" name="jumlah_pendaki" value="{{$booking->jumlah_pendaki}}">
     </div>
-    <button type="submit" class="btn btn-primary">Bayar</button>
-</form>
+      <button type="submit" class="btn btn-primary">Bayar</button>
+    </form>
+  </div><br> --}}
 
   </section>
 

@@ -74,6 +74,10 @@
   <section id="skills" class="skills">
     <div class="form-container">
 
+      <div class="section-title">
+        <h2>Booking</h2>
+      </div>
+
     </div>
     <!-- Formulir untuk memasukkan tanggal berangkat dan pulang -->
     <form method="POST" action="{{ route('booking.store') }}">
