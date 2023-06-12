@@ -112,7 +112,7 @@
         <label for="end_date" class="form-label">Tanggal Pulang:</label>
         <input class="form-control" type="date" name="end_date" id="end_date" required>
     </div>
-    <button type="submit" class="btn btn-primary">Cek Kuota</button>
+    <button type="submit" class="btn btn-primary">Periksa Kuota</button>
 </form>
 
 <br>

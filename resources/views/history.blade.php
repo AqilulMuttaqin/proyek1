@@ -90,7 +90,6 @@
                       <h3 class="card-title">{{$h->nama}}</h3>
                       
                       <p class="card-text">Jumlah Pendaki: {{$h->jumlah_pendaki}} Orang <br> Dengan Nominal: Rp. {{$h->nominal}}</p>
-                      <a href="#" class="card-link">Another link</a>
                     </div>
                   </div>
                   

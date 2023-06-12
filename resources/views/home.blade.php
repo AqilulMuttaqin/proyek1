@@ -4,7 +4,7 @@
 <main id="main">
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients section-bg">
+    {{-- <section id="clients" class="clients section-bg">
       <div class="container">      
           <div class="col-lg-4 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <img src="assets/img/laravel.png" class="img-fluid" alt="">
@@ -12,7 +12,7 @@
         </div>
 
       </div>
-    </section><!-- End Cliens Section -->
+    </section><!-- End Cliens Section --> --}}
     
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">

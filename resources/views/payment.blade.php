@@ -95,6 +95,7 @@
               @csrf
               <div class="mb-3">
                 <h3>Payment Instruction</h3>
+                <label for="payment_method">Jumlah Pembayaran untuk {{$booking->jumlah_pendaki}} orang ({{ "Rp " . number_format($booking->nominal,2,',','.') }}) </label><br>
                 <label for="payment_method">Pembayaran kirim ke rekening yang tertera di bawah</label><br>
                 <label for="payment_method">- BRI: 626163646506</label><br>
                 <label for="payment_method">- BNI: 717273747507</label><br>
