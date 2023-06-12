@@ -5,13 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Home Page</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Home Page</li>
-            </ol>
+            <h1>Booking Page</h1>
           </div>
         </div>
       </div>
@@ -23,7 +17,7 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">{{$d->nama}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{$d->jumlah_pendaki}} orang ({{ "Rp " . number_format($d->nominal,2,',','.') }})</h6>
+              <h6 class="card-subtitle mb-2 text-muted"><br>{{$d->jumlah_pendaki}} orang ({{ "Rp " . number_format($d->nominal,2,',','.') }})</h6>
               <p class="card-text">Mulai tanggal {{ $d->tanggal_berangkat }} sampai tanggal {{ $d->tanggal_pulang }}</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bukti{{ ++$i }}">
                 Lihat Bukti

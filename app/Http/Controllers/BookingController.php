@@ -124,7 +124,7 @@ public function processPayment(Request $request, $booking_id)
     }
 
     public function success(){
-        $data = Booking::where('status', '=', 'success')->paginate(12);
+        $data = Booking::where('status', '=', 'success')->paginate(5);
         $total = 0;
         foreach($data as $d){
             $total += $d->nominal;
@@ -133,7 +133,7 @@ public function processPayment(Request $request, $booking_id)
     }
 
     public function failed(){
-        $data = Booking::where('status', '=', 'failed')->paginate(12);
+        $data = Booking::where('status', '=', 'failed')->paginate(5);
         return view('admin.failed', ['data' => $data]);
     }
 }
