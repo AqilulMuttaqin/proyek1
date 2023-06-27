@@ -18,7 +18,7 @@
           <div class="inner">
             <h3>{{ $jumlah_booking }}</h3>
 
-            <p>Jumlah Booking</p>
+            <p>Total Booking</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -32,9 +32,9 @@
       <div class="col-lg-3">
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>{{ $data_diterima }}</h3>
+            <h3>{{ $jumlah_pendaki }}</h3>
 
-            <p>Booking Diterima</p>
+            <p>Total Pendaki</p>
           </div>
           <div class="icon">
             <i class="ion ion-checkmark"></i>
@@ -47,7 +47,7 @@
           <div class="inner">
             <h3>{{ $data_pending }}</h3>
 
-            <p>Booking Pending</p>
+            <p>Menunggu Konfirmasi</p>
           </div>
           <div class="icon">
             <i class="ion ion-alert"></i>
@@ -65,10 +65,41 @@
           <div class="icon">
             <i class="ion ion-cash"></i>
           </div>
-          <a href="/booking_success" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="#" type="button" class="small-box-footer" data-toggle="modal" data-target="#exampleModalCenter">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
      </div>
     </section>
   </div>
 @endsection
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Input Tanggal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/admin-dashboard">
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+          <input type="date" class="form-control" id="exampleFormControlInput1" name="start_date">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput2" class="form-label">End Date</label>
+          <input type="date" class="form-control" id="exampleFormControlInput2" name="end_date">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

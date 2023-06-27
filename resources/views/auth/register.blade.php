@@ -48,6 +48,8 @@
                         </form>
                     </div>
                     <div class="signup-image">
+                        <h2 class="center-align">Butak</h2>
+                        <h2>Panderman</h2>
                         <figure><img src="https://th.bing.com/th/id/R.bca4ebe55c89a94b65187aced759642c?rik=DU%2fDFh729P83hA&riu=http%3a%2f%2fgetdrawings.com%2fvectors%2fcolorado-mountains-vector-33.jpg&ehk=9FAYkuy3ezyNqChb3jw71PmvgGuTpvu39SQuFDlQ0z0%3d&risl=&pid=ImgRaw&r=0" alt="sing up image"></figure>
                         <a href="login" class="signup-image-link">I am already member</a>
                     </div>

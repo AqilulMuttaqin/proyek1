@@ -20,11 +20,14 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
+                        <h2>Butak</h2>
+                        <h2>Panderman</h2>
                         <figure><img src="https://th.bing.com/th/id/R.bca4ebe55c89a94b65187aced759642c?rik=DU%2fDFh729P83hA&riu=http%3a%2f%2fgetdrawings.com%2fvectors%2fcolorado-mountains-vector-33.jpg&ehk=9FAYkuy3ezyNqChb3jw71PmvgGuTpvu39SQuFDlQ0z0%3d&risl=&pid=ImgRaw&r=0" alt="sing up image"></figure>
                         <a href="register" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
+                        
                         <h2 class="form-title">Sign In</h2>
                         <form method="POST" action="{{ url('/login') }}" class="register-form" id="login-form">
                           @csrf

@@ -12,10 +12,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -27,23 +23,36 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
-        $data = Booking::where('status', '=', 'success')->get();
-        $data_all = Booking::all();
+        $data = Booking::where('status', '=', 'success');
+        if($request->start_date != '' && $request->end_date != ''){
+            $data = $data->whereBetween('created_at', [$request->start_date, $request->end_date])->get();
+        } else if($request->end_date != ''){
+            $data = $data->where('created_at', '<=', $request->end_date)->get();
+        } else if($request->start_date != ''){
+            $data = $data->where('created_at', '>=', $request->start_date)->get();
+        } else {
+            $data = $data->get();
+        }
+        
         $data_pending = Booking::where('status', '=', 'pending')->get();
         $total_pendapatan = 0;
-        $data_diterima = count($data);
+        $jumlah_pendaki = 0;
+        // $data_diterima = count($data);
+        foreach($data as $d){
+            $jumlah_pendaki += $d->jumlah_pendaki;
+        }
         foreach($data as $d){
             $total_pendapatan += $d->nominal;
         }
-        $jumlah_booking = count($data_all);
+        $jumlah_booking = count($data);
 
         return view('admin.home',[
             'data_pending' => count($data_pending),
             'total_pendapatan' => $total_pendapatan,
             'jumlah_booking' => $jumlah_booking,
-            'data_diterima' => $data_diterima
+            'jumlah_pendaki' => $jumlah_pendaki
         ]);
     }
 }

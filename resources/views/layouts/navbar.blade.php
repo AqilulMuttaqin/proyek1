@@ -18,6 +18,8 @@
                   <li><a href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
               </li>
+              @else 
+                <li><a class="nav-link scrollto" href="{{ url('/login') }}">Masuk/Daftar</a></li>
               @endauth
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
